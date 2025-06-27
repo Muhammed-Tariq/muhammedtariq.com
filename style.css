@@ -1,0 +1,13 @@
+/* Typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@200..900&display=swap');
+
+body {
+  font-family: 'Reddit Sans', sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.6;
+  margin: 0;
+}
+
+h1 { font-weight: 700; }
+p  { font-weight: 400; }
