@@ -1,0 +1,74 @@
+/* Typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@200..900&display=swap');
+
+body {
+  font-family: "Reddit Sans", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.6;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+p  {
+  color: #A1A1A1;
+  font-weight: 400; 
+}
+
+/* Layout */
+
+.wrapper { 
+    flex-direction: column;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+main {
+    grid-row: auto;
+}
+
+.sidebar {
+    height: auto;
+    position: static;
+}
+
+.name {
+    order: 0;
+    font-size: 3.4rem;
+}
+
+.tagline {
+    order: 1;
+    font-size: 1.3rem;
+}
+
+body {
+    padding-inline: 1rem;
+}
+
+.site-nav {
+    display: none;
+}
+
+.sidebar footer{
+    order: 3;
+    margin-top: 0.75rem;   
+    padding-bottom: 1.5rem;
+}
+
+nav a {
+    display: block; 
+    padding: .5rem 0; 
+}
+
+.catchphrase {
+    order: 2;
+    max-inline-size: 35ch;
+}
+
+.box {
+    padding: 1.5rem;
+    margin-inline: 0;
+    max-width: 100%;
+}

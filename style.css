@@ -3,11 +3,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@200..900&display=swap');
 
 body {
-  font-family: 'Reddit Sans', sans-serif;
+  font-family: "Reddit Sans", sans-serif;
   font-optical-sizing: auto;
   line-height: 1.6;
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
 }
 
-h1 { font-weight: 700; }
-p  { font-weight: 400; }
+p  {
+  color: #A1A1A1;
+  font-weight: 400; 
+}
+
+/* Layout */
+
+:root {
+  --text: #ffffff;
+  --bg: #171717;
+  --accent: #ff7a00;
+  --gray: #666666;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: clamp(320px, 28vw, 480px) 1fr;
+  column-gap: 10rem;
+  max-width: min(90vw, 1300px);
+  margin-inline: auto;
+}
+
+.sidebar{
+  flex: 0 0 280px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar footer{
+  margin-top: auto;
+  padding-bottom: 1.5rem;
+}
+
+main {
+  flex: 1;
+  padding: 4rem 2rem;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.content {
+  flex: 1;
+  padding: 4rem 2rem;
+  min-width: 0;
+}
+
+/* Sidebar/header Text */
+
+.name{
+  font-size: 3.75rem;
+  line-height: .85;
+  font-weight: 800;
+  margin: 5rem 0 0;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.name::after {
+  content: ".";
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0.1rem 0 0.5rem;
+  white-space: nowrap;
+}
+
+.catchphrase {
+  color: #A1A1A1;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Section Text */
+
+.footnote {
+  font-size: 0.6rem;
+  vertical-align: super;
+  color: #666666;
+}
+
+.description .footnote {
+  color: #A1A1A1
+}
+
+.date {
+  color:#666666;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.job {
+  color: white;
+  font-weight: 550;
+}
+
+.job-title {
+  align-items: baseline;
+  display: contents;
+  flex-wrap: wrap;
+  margin: 0;
+  line-height: 0;
+}
+
+.job-title p {
+  margin: 0.25rem;
+}
+
+.past-job {
+  font-weight: 500;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.description {
+  grid-column: 1 / -1;
+}
+
+/* Sections */
+
+.box {
+  width: 100%;
+  max-width: 35rem;
+  box-sizing: border-box;
+  border: 1px solid #535353;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 1.5rem auto;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;  
+}
+
+.job-title .date,
+.job-title .job{
+  margin: 0;
+  line-height: 1.35;
+}
+
+.job-title > p:not(.date) {
+  grid-column: 2;
+  margin: 0;
+  line-height: 1.35;
+  margin-top: 0;
+}

@@ -4,42 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css" media="(max-width: 1050px)">
     <title>Muhammed Tariq</title>
 </head>
 <body>
-    <aside class="sidebar">
-        <!-- Stationary sidebar, for my name/general description -->
-        <h1>Muhammed Tariq</h1>
-        <p class="tagline">Student • Facilitator at Leaf</p>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <!-- Stationary sidebar, for my name/general description -->
+            <h1 class="name">Muhammed Tariq</h1>
+            <h2 class="tagline">Student • Facilitator at Leaf</h2>
+            <p class="catchphrase">I’m interested in the question of how we can develop safe, interpretable, and intelligent AI systems through their inevitable progression.</p>
 
-        <nav>
-            <a href="#about" class="nav-link">ABOUT</a>
-            <a href="#experience" class="nav-link">EXPERIENCE</a>
-            <a href="#education" class="nav-link">EDUCATION</a>
-            <a href="#blog" class="nav-link">BLOG</a>
-        </nav>
+            <nav class="site-nav">
+                <a href="#about" class="nav-link">ABOUT</a><br>
+                <a href="#experience" class="nav-link">EXPERIENCE</a><br>
+                <a href="#education" class="nav-link">EDUCATION</a><br>
+                <a href="#blog" class="nav-link">BLOG</a><br>
+            </nav>
 
-        <footer>
-            <a href="https://www.linkedin.com/in/muhammed5371/" title="LinkedIn">TEMP</a>
-            <a href="https://github.com/Muhammed-Tariq/" title="GitHub">TEMP</a>
-            <a href="https://www.youtube.com/@seriaura" title="YouTube">TEMP</a>
-            <a href="" title="Substack/Medium">TEMP</a>
-        </footer>
-    </aside>
-    <main>
-        <!-- Scrolling content, rest of portfolio -->
-         <section id="about">
-            <!-- ABOUT -->
-         </section>
-         <section id="experience">
-            <!-- EXPERIENCE -->
-         </section>
-         <section id="education">
-            <!-- EDUCATION -->
-         </section>
-         <section id="blog">
-            <!-- BLOG -->
-         </section>
+            <footer>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/muhammed5371/" title="LinkedIn">TEMP</a>
+                    <a href="https://github.com/Muhammed-Tariq/" title="GitHub">TEMP</a>
+                    <a href="https://www.youtube.com/@seriaura" title="YouTube">TEMP</a>
+                    <a href="" title="Substack/Medium">TEMP</a>
+                </div>
+            </footer>
+        </aside>
+        <main>
+            <!-- Scrolling content, rest of portfolio -->
+            <section id="about">
+                <p class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque felis, vehicula non dolor ac, tincidunt dapibus sem. Fusce vitae tincidunt mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque bibendum nunc nec sodales lobortis. Curabitur ultrices mollis sapien a ornare. Curabitur iaculis nunc vestibulum magna dapibus tincidunt. Pellentesque feugiat urna in arcu convallis, vitae imperdiet urna pulvinar. Proin consequat pharetra justo vitae iaculis. Phasellus maximus semper quam et consectetur. Etiam cursus leo a rhoncus semper. Etiam congue ipsum quis nibh vulputate, dignissim dapibus velit ornare. Vivamus turpis leo, laoreet nec vulputate eu, imperdiet eu sapien. Curabitur sollicitudin ipsum mauris, in iaculis erat posuere dapibus. Aliquam at sem felis. Aliquam vel erat odio.<br><br>
+
+                    Etiam ut volutpat arcu. Ut vitae auctor enim. Sed ultrices facilisis viverra. Ut luctus laoreet erat ultricies vehicula. Aenean mattis ipsum ac arcu tincidunt, at sollicitudin turpis accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer maximus sapien ac odio sodales, id consectetur odio semper. Ut dignissim urna libero, rutrum pretium orci egestas in. Fusce sit amet eleifend dolor. Cras a pellentesque libero.
+                </p>
+            </section>
+            <section id="experience">
+                <!-- Experience -->
+                 <div class="box">
+                    <div class="job-title">
+                        <p class="date">JUL 2024<a class="footnote">1</a> — PRESENT</p>
+                        <p class="job">Dilemmas and Dangers in AI, Facilitator • <a href="https://www.leaf.courses/">Leaf</a></p>
+                        <p class="past-job">Maths of Morality, Fellow<br>Dilemmas and Dangers in AI, Finalist</p>
+                    </div>
+                    <p class="description">
+                        Duis dolor justo, congue vitae luctus nec, consectetur ac lorem. Suspendisse id augue mattis, dapibus lorem sit amet, condimentum nibh. Donec elementum mauris ac luctus feugiat. Maecenas eleifend mi massa, tincidunt feugiat nulla gravida volutpat. Morbi commodo tincidunt sem, ut porttitor risus congue eget. Sed faucibus at turpis ac sollicitudin. Nullam non turpis bibendum, fringilla lorem a, pharetra tellus.
+                    </p>
+                 </div>
+                 <div class="box">
+                    <div class="job-title">
+                        <p class="date">MAY 2024 — AUG 2024</p>
+                        <p class="job">Fellow • <a href="https://www.non-trivial.org/">Non-Trivial</a></p>
+                    </div>
+                    <p class="description">
+                        Ut dapibus dui vel purus finibus, nec aliquet lectus ultrices. Donec bibendum rutrum tincidunt. Morbi nec venenatis metus, rutrum vestibulum ipsum. Curabitur aliquam sollicitudin justo non gravida. Nullam ac ante facilisis, tempus libero sit amet, scelerisque tellus. Mauris non nisi sit amet sem malesuada varius. Maecenas eu est accumsan, fringilla ex vel, varius turpis. Fusce non vulputate felis, ac imperdiet velit. Suspendisse iaculis auctor justo, nec tincidunt tellus malesuada at. Vestibulum quis urna a odio cursus volutpat nec sit amet orci.
+                    </p>
+                 </div>
+                 <p class="description"><a class="footnote">1</a>I'm facilitating for Leaf's '2025 cohort, and have done so last year for Leaf's '2024 cohort, with a break in the middle.</p>
+            </section>
+            <section id="education">
+                <!-- Education -->
+                <br><br>
+                <div class="box">
+                    <div class="job-title">
+                        <p class="date">SEP 2024 — PRESENT</p>
+                        <p class="job">Student • <a href="https://surreymathsschool.co.uk/">Surrey Maths School</a></p>
+                        <p class="past-job">A-Levels: A* A* A* A* (predicted)</p>
+                    </div>
+                    <p class="description">
+                        Duis dolor justo, congue vitae luctus nec, consectetur ac lorem. Suspendisse id augue mattis, dapibus lorem sit amet, condimentum nibh. Donec elementum mauris ac luctus feugiat. Maecenas eleifend mi massa, tincidunt feugiat nulla gravida volutpat. Morbi commodo tincidunt sem, ut porttitor risus congue eget. Sed faucibus at turpis ac sollicitudin. Nullam non turpis bibendum, fringilla lorem a, pharetra tellus.
+                    </p>
+                 </div>
+                <div class="box">
+                    <div class="job-title">
+                        <p class="date">SEP 2019 — SEP 2024</p>
+                        <p class="job">Student • <a href="https://www.ernestbevinacademy.org.uk/">Ernest Bevin Academy</a></p>
+                        <p class="past-job">GCSEs: 999999999<br>(9 in English Language, 9 in Mathematics)</p>
+                    </div>
+                    <p class="description">
+                        Cras elementum finibus leo. Nulla nec pulvinar lectus. Vivamus dignissim consequat diam, et tempor metus. Donec tempor, nibh vitae blandit placerat, dui dolor dictum tortor, at dignissim eros est dignissim enim. Pellentesque rhoncus ligula at nulla porttitor mattis. Pellentesque non rhoncus mi, sed auctor neque. In venenatis pellentesque ligula, sed euismod purus eleifend ut. Ut porttitor euismod est, sed aliquet libero feugiat ac.
+                    </p>
+                 </div>
+            </section>
+            <section id="blog">
+                <!-- Blog -->
+            </section>
     </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
