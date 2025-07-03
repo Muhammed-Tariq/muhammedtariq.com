@@ -45,6 +45,8 @@ p  {
 .sidebar footer{
   margin-top: auto;
   padding-bottom: 1.5rem;
+  user-select: none;
+  caret-color: transparent;
 }
 
 main {
@@ -131,14 +133,35 @@ main {
 a {
   color: var(--text);
   text-decoration: none;
+  transition: 0.15s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #ffaf64;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: var(--text);
 }
 
 .description {
   grid-column: 1 / -1;
+}
+
+.end {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #646464
+
+}
+
+.end a {
+  color: #999999
+}
+
+.end a:hover {
+  color: #ffaf64;
 }
 
 /* Sections */
@@ -156,8 +179,40 @@ a:hover {
   column-gap: 2rem;  
 }
 
+.box.with-image {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  row-gap: 1rem;
+}
+
+.box.with-image .spectrogram {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.box.with-image .job-title {
+  grid-column: 1;
+  grid-row: 2;
+  display: block;
+  margin-top: .25rem;
+}
+
+.box.with-image .job-title > .date {
+  display: block;
+  margin: 0 0 .35rem 0;
+}
+
+.box.with-image .description {
+  grid-column: 1;
+  grid-row: 3;
+}
+
 .job-title .date,
-.job-title .job{
+.job-title .job {
   margin: 0;
   line-height: 1.35;
 }
@@ -167,4 +222,96 @@ a:hover {
   margin: 0;
   line-height: 1.35;
   margin-top: 0;
+}
+
+.small-only {
+  display: none;
+}
+
+/* Navigation */
+
+.site-nav {
+  padding: 0.75rem 0rem;
+}
+
+.site-nav a {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li{
+  margin: 0.5rem 0;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  color: #666666;
+  transition: color .35s ease;
+}
+
+.nav-link::before {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  background: currentColor;
+  margin-right: 0.5rem;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color:#cccccc;
+  text-decoration: none;
+}
+
+.nav-link:hover::before,
+.nav-link:focus::before,
+.nav-link.active::before {
+  width:4.5rem;
+  background:#cccccc;
+}
+
+/* Images */
+
+.socials a.social-image {
+  display: inline-block;
+  margin-right: 0.75rem;
+  user-select: none;
+  caret-color: transparent;
+}
+
+.socials a.social-image img {
+  width: 30px;
+  aspect-ratio: 1;
+  filter:grayscale(1) contrast(0) brightness(.75);
+  transition: filter 0.2s ease;
+}
+
+.socials a.social-image:hover img,
+.socials a.social-image:focus img {
+  filter: grayscale(0) contrast(0) brightness(1.5);
+}
+
+.spectrogram {
+  border-radius: 20px;
+  height: 150px;
+}
+
+/* Other */
+
+html {
+  scroll-behavior: smooth;
 }

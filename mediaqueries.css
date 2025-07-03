@@ -1,22 +1,8 @@
-/* Typography */
-
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@200..900&display=swap');
-
-body {
-  font-family: "Reddit Sans", sans-serif;
-  font-optical-sizing: auto;
-  line-height: 1.6;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-}
-
-p  {
-  color: #A1A1A1;
-  font-weight: 400; 
-}
-
 /* Layout */
+
+.small-only {
+  display: initial;
+}
 
 .wrapper { 
     flex-direction: column;
@@ -71,4 +57,19 @@ nav a {
     padding: 1.5rem;
     margin-inline: 0;
     max-width: 100%;
+}
+
+h2.small-only {
+    padding: 4rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #c2c2c2
+}
+
+#about {
+    padding-top: clamp(2rem, 5vw, 4rem)
+}
+
+#about p:first-of-type {
+    margin-top: -3rem;
 }
