@@ -4,6 +4,10 @@
   display: initial;
 }
 
+.large-only { 
+    display: none; 
+}
+
 .wrapper { 
     flex-direction: column;
     grid-template-columns: auto;
