@@ -78,15 +78,22 @@ h2.small-only {
     margin-top: -3rem;
 }
 
-/* --- Mobile spacing tweaks --- */
+/* Spacing Tweaks */
 
-/* 1) Make the page gutter easy to tune */
-:root { --mobile-gutter: 1rem; }     /* change this to taste (e.g., .75rem) */
-body { padding-inline: var(--mobile-gutter); }  /* you already have this; keeping it here for clarity */
+:root { 
+    --mobile-gutter: 1rem; 
+}
+body { 
+    padding-inline: var(--mobile-gutter);
+}
 
-/* 2) Remove extra horizontal padding added by base styles */
-main { padding-inline: 0; }          /* cancels the 2rem sides from style.css */
-.content { padding-inline: 0; }      /* cancels the 2rem sides from style.css */
+main { 
+    padding-inline: 0; 
+}
+.content { 
+    padding-inline: 0; 
+}
 
-/* Optional: tighten the mobile section label spacing too */
-h2.small-only { padding: 2rem 0; }   /* was 4rem 2rem in mobile; trims side padding */
+h2.small-only { 
+    padding: 2rem 0; 
+}
