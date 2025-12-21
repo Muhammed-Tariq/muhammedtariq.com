@@ -362,9 +362,14 @@ html {
 
 .yir-image {
   margin-top: clamp(1rem, 2.5vw, 2rem);
-  width: 100%;
-  height: clamp(320px, 55vh, 650px);
+
+  width: min(1400px, 96vw);
+  height: clamp(420px, 70vh, 900px);
+
   object-fit: cover;
-  border-radius: 20px;
+
+  border-radius: 0;
+
   border: 1px solid #535353;
 }
+
