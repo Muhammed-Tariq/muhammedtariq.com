@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/year-in-review", "destination": "/year-in-review.html" }
+  ]
+}
