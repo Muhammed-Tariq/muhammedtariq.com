@@ -320,3 +320,51 @@ h1 a:hover {
 html {
   scroll-behavior: smooth;
 }
+
+/* Year in Review subpage */
+
+.yir-page {
+  padding: 0;
+}
+
+.yir {
+  min-height: 100vh;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.yir-title {
+  margin: 0;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  font-weight: 750;
+  line-height: 1.05;
+}
+
+.yir-title::after {
+  content: ".";
+  color: var(--accent);
+}
+
+.yir-subtitle {
+  margin: 0;
+  max-width: 60ch;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: #A1A1A1;
+  font-weight: 400;
+}
+
+.yir-image {
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+  width: 100%;
+  height: clamp(320px, 55vh, 650px);
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid #535353;
+}
