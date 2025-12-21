@@ -370,4 +370,65 @@ html {
   border: 0;
 }
 
+/* Lightbox (click-to-zoom) */
+
+html.no-scroll,
+html.no-scroll body {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  padding: clamp(12px, 2vw, 24px);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-stage {
+  max-width: 96vw;
+  max-height: 92vh;
+  overflow: auto;
+}
+
+.lightbox-img {
+  display: block;
+  max-width: 96vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox.actual .lightbox-img {
+  max-width: none;
+  max-height: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: white;
+  font-size: 32px;
+  line-height: 44px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
 
