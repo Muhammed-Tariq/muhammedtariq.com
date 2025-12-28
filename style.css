@@ -347,11 +347,6 @@ html {
   line-height: 1.05;
 }
 
-.yir-title::after {
-  content: ".";
-  color: var(--accent);
-}
-
 .yir-subtitle {
   margin: 0;
   max-width: 60ch;
