@@ -101,3 +101,43 @@ sections.forEach(sec => observer.observe(sec));
     if (e.key === 'Enter') toggleActual();
   });
 })();
+
+/* Background image cursor spotlight */
+(() => {
+  const root = document.documentElement;
+  const body = document.body;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ticking = false;
+
+  function updateSpotlight() {
+    root.style.setProperty("--spotlight-x", `${mouseX}px`);
+    root.style.setProperty("--spotlight-y", `${mouseY}px`);
+    ticking = false;
+  }
+
+  function onPointerMove(e) {
+    if (e.pointerType === "touch") return;
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    body.classList.add("spotlight-active");
+
+    if (!ticking) {
+      requestAnimationFrame(updateSpotlight);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("pointermove", onPointerMove, { passive: true });
+
+  document.documentElement.addEventListener("pointerleave", () => {
+    body.classList.remove("spotlight-active");
+  });
+
+  window.addEventListener("blur", () => {
+    body.classList.remove("spotlight-active");
+  });
+})();

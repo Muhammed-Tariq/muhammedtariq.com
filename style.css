@@ -11,19 +11,108 @@ body {
   color: var(--text);
 }
 
+:root {
+  --text: #ffffff;
+  --bg: #171717;
+  --accent: #ff7a00;
+  --gray: #b8b8b8;
+
+  /* Change this to your actual image path */
+  --site-bg-image: url("assets/background.png");
+
+  --spotlight-x: 50vw;
+  --spotlight-y: 50vh;
+  --spotlight-size: clamp(240px, 28vw, 560px);
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg);
+}
+
+/* Dark, always-visible background image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background-image: var(--site-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.45;
+  filter: brightness(0.6) contrast(1.25) saturate(0.8);
+}
+
+/* Bright copy revealed near the cursor — no glow field */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image: var(--site-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  filter: brightness(0.7) contrast(1.35) saturate(1.1);
+
+  -webkit-mask-image: radial-gradient(
+    circle var(--spotlight-size) at var(--spotlight-x) var(--spotlight-y),
+    black 0%,
+    black 35%,
+    rgba(0, 0, 0, 0.75) 52%,
+    transparent 78%
+  );
+
+  mask-image: radial-gradient(
+    circle var(--spotlight-size) at var(--spotlight-x) var(--spotlight-y),
+    black 0%,
+    black 35%,
+    rgba(0, 0, 0, 0.75) 52%,
+    transparent 78%
+  );
+
+  transition: opacity 140ms ease;
+}
+
+body.spotlight-active::after {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  body::after {
+    display: none;
+  }
+}
+
 p  {
-  color: #A1A1A1;
-  font-weight: 400; 
+  color: #b4b4b4;
+  font-weight: 500; 
 }
 
 /* Layout */
 
 :root {
   --text: #ffffff;
-  --bg: #171717;
+  --bg: #131313;
   --accent: #ff7a00;
-  --gray: #666666;
+  --gray: #adadad;
+
+  /* Background spotlight settings */
+  --site-bg-image: url("assets/background_image.png");
+  --spotlight-x: 50vw;
+  --spotlight-y: 50vh;
+  --spotlight-size: clamp(260px, 32vw, 620px);
 }
+
 
 .wrapper{
   display: grid;
@@ -96,7 +185,7 @@ main {
 .footnote {
   font-size: 0.6rem;
   vertical-align: super;
-  color: #666666;
+  color: #9c9c9c;
 }
 
 .description .footnote {
@@ -104,7 +193,7 @@ main {
 }
 
 .date {
-  color:#666666;
+  color:#9c9c9c;
   font-weight: 700;
   font-size: 0.95rem;
 }
@@ -132,8 +221,13 @@ main {
 
 a {
   color: var(--text);
+  font-weight: 625;
   text-decoration: none;
   transition: 0.15s ease;
+}
+
+#website-title {
+  font-weight: 750;
 }
 
 a:hover {
@@ -152,7 +246,7 @@ h1 a:hover {
 .end {
   font-weight: 500;
   font-size: 0.95rem;
-  color: #646464
+  color: #757575
 
 }
 
@@ -242,7 +336,7 @@ h1 a:hover {
 .site-nav a {
   font-weight: 600;
   font-size: 0.85rem;
-  color: #666666;
+  color: #9c9c9c;
 }
 
 .site-nav ul {
@@ -319,111 +413,5 @@ h1 a:hover {
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Year in Review subpage */
-
-.yir-page {
-  padding: 0;
-}
-
-.yir {
-  min-height: 100vh;
-  width: min(1100px, 92vw);
-  margin: 0 auto;
-  padding: clamp(2.5rem, 6vw, 5rem) 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-}
-
-.yir-title {
-  margin: 0;
-  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
-  font-weight: 750;
-  line-height: 1.05;
-}
-
-.yir-subtitle {
-  margin: 0;
-  max-width: 60ch;
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  color: #A1A1A1;
-  font-weight: 400;
-}
-
-.yir-image {
-  margin-top: clamp(1rem, 2.5vw, 2rem);
-  width: min(1800px, 96vw);
-  height: auto;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 0;
-  border: 0;
-}
-
-/* Lightbox (click-to-zoom) */
-
-html.no-scroll,
-html.no-scroll body {
-  overflow: hidden;
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: none;
-  padding: clamp(12px, 2vw, 24px);
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.lightbox.open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-stage {
-  max-width: 96vw;
-  max-height: 92vh;
-  overflow: auto;
-}
-
-.lightbox-img {
-  display: block;
-  max-width: 96vw;
-  max-height: 92vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.lightbox.actual .lightbox-img {
-  max-width: none;
-  max-height: none;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: white;
-  font-size: 32px;
-  line-height: 44px;
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-.lightbox-close:hover {
-  opacity: 1;
 }
 
